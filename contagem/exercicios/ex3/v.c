@@ -6,7 +6,6 @@ int funcao ( int n) {
     for(int i = 1; i <= n; i++){
         int valueN = i;
         for(int j = i + 1 ; valueN <=n; j++){
-
             if(valueN == n){
                 seq++;
             }
