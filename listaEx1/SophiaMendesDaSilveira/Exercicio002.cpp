@@ -59,5 +59,7 @@ int main () {
     
     bubleSort(vetor, n);
 
+    delete vetor;
+
     return 0;
 }

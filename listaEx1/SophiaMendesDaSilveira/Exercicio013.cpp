@@ -67,5 +67,6 @@ int main () {
     
     selectionSort(vetor, tam);
 
+    delete vetor;
     return 0;
 }
