@@ -39,7 +39,7 @@ string CharStack :: str () const {
     int i;
     stringstream ss ;
     ss << "|";
-    for (i =0; i < numElements ; ++ i) ss << stack [ i] << "|";
-        for (; i < maxElements ; ++ i) ss << " |";
+    for (i =0; i < numElements ; ++ i) ss << stack [i];
+        //for (; i < maxElements ; ++ i) ss << " |";
     return ss . str ();
 }
