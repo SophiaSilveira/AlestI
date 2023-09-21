@@ -31,8 +31,6 @@ int main () {
         aux = aux->prox;
     }
 
-    
-
     cout << "head --> "; // Exibição
 
 for ( Nodo * aux = head ; aux != nullptr ; aux = aux -> prox )
