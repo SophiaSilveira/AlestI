@@ -8,22 +8,6 @@ struct Node {
 };
 
 void reverse ( Node **head , Node **tail ){
-    /*Node *ant = nullptr;
-    Node *aux = *head;
-    *head = *tail = nullptr;
-
-    while(aux != nullptr){
-        
-        Node * node = ;
-        node -> next = *head ;
-       *head = node;
-
-       if ( tail == nullptr ) *tail = node;
-        
-       ant = aux;
-       aux = aux->next;
-       delete ant;
-    }*/
 
     Node *newHead = nullptr; Node *newTail = nullptr;
 
