@@ -1,3 +1,4 @@
+//Exercicio 001, Sophia Mendes da Silveira, T2, V.3 - 28/09/2023.
 #include <iostream>
 
 using namespace std;
@@ -102,13 +103,12 @@ bool removeIndice(Node **head, Node **tail, int indice){
     return true; 
 }
 
-
 int main(){
 
     Node *head = nullptr, *tail = nullptr; 
     char letra;
     char info;
-    int indice;
+    unsigned indice;
 
     while(letra != '.'){
 
