@@ -5,8 +5,8 @@ using namespace std;
 struct Node {
   char info;  
   Node *prev, *next;
-  Node(int i) {  info = i;  prev = next = nullptr;  cout << "+ Node(" << info << ") criado..." << endl;  }
-  ~Node() {  cout << "- Node(" << info << ") destruido..." << endl;  }
+  Node(int i) {  info = i;  prev = next = nullptr;  cout << "+" << endl;  }
+  ~Node() {  cout << "-" << endl;  }
 };
 
 void adicionaInicio( Node **head, Node **tail, char letra){
@@ -21,9 +21,13 @@ void adicionaInicio( Node **head, Node **tail, char letra){
 
 void adicionaFinal(Node **head, Node **tail, char letra){
     Node * node = new Node (letra);
-    node->prev = *tail;
-    (*tail)->next = node;
-    *tail = node;
+
+    if ( *head == nullptr ) { *head = *tail = node; }
+    else {
+        node->prev = *tail;
+        (*tail)->next = node;
+        *tail = node;
+    }
 }
 
 void adicionaIndice(Node **head, Node **tail, int indice, char letra){
@@ -123,11 +127,9 @@ int main(){
             adicionaFinal(&head, &tail, info);
         }
         else if(letra == '+'){
-            cin >> indice >> info;
-
+            cin >> info >> indice;
             adicionaIndice(&head, &tail, indice, info);
 
-            cout << "+" << endl;
         }
         else if(letra == '{'){
             if(!removeInicio(&head, &tail))
@@ -142,9 +144,6 @@ int main(){
 
             if(!removeIndice(&head, &tail, indice))
                 cout << "ERRO" << endl;
-            else{
-                cout << "+" << endl;
-            }
         }
     }
 
@@ -153,6 +152,10 @@ int main(){
       cout << aux->info << "|";
     cout << endl;
     
+    while ( head != nullptr ) { // Desaloca ção
+        Node * aux = head ; head = head-> next; 
+        delete aux ; 
+    } 
 
     return 1;
 }
