@@ -45,7 +45,8 @@ string strGraphViz ( Node * root ) {
 //criar método para contar os nodos de uma subárvore
 
 int size(Node *subtree){
-    return 0;
+    if(subtree == nullptr) return 0;
+    return int res = 1 + size(subtree->left) + size(subtree->right);
 }
 
 //contar filhos
