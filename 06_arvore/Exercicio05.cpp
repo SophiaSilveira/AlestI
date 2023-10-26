@@ -43,25 +43,41 @@ string strGraphViz ( Node * root ) {
 }
 
 //criar método para contar os nodos de uma subárvore
-
 int size(Node *subtree){
     if(subtree == nullptr) return 0;
-    return int res = 1 + size(subtree->left) + size(subtree->right);
+    return 1 + size(subtree->left) + size(subtree->right);
 }
 
 //contar filhos
 int degree(Node *subtree){
-    return 0;
+    if(subtree ==nullptr) return 0;
+
+    int f = 0;
+
+    if(subtree->left != nullptr) f += 1 + degree(subtree->left);
+    if(subtree->right != nullptr) f += 1 + degree(subtree->right);
+
+    return f;
 }
 
 //dizer o profundidade;
 int depth(Node *subtree){
-    return 0;
+    if(subtree == nullptr) return 0;
+    if(subtree->parent == nullptr) return 0;
+    return 1 + depth(subtree->parent);
 }
 
 //profundidade da arvore;
 int treeDepth(Node *subtree){
-    return 0;
+    if(subtree ==  nullptr) return 0;
+
+    int l = 0;
+    int r = 0;
+
+    if(subtree->left != nullptr) l += 1 + treeDepth(subtree->left);
+    if(subtree->right != nullptr) r += 1 + treeDepth(subtree->right);
+
+    return l > r ? l : r;
 }
 
 int main() { 
@@ -75,7 +91,7 @@ int main() {
   cout << "Quantidade de nodos da arvore = " << size(root) << endl;
   cout << "Nivel de nodos da arvore = " << treeDepth(root) << endl;
   cout << "Grau do nodo (" << f->info << ") = " << degree(f) << endl;
-  cout << "Nivel do nodo (" << f->info << ") = " << depth(f) << endl;
+  cout << "Nivel do nodo (" << f->info << ") = " << depth(f) << endl << endl;
 
   delete root;
   return 0;
