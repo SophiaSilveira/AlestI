@@ -1,0 +1,14 @@
+graph NodeCharTree {
+  node [shape=circle]
+  A -- B
+  B -- D
+  D -- I
+  D -- J
+  B -- E
+  B -- F
+  A -- C
+  C -- G
+  C -- H
+  H -- K
+}
+

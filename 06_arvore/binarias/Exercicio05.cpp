@@ -70,14 +70,9 @@ int depth(Node *subtree){
 //profundidade da arvore;
 int treeDepth(Node *subtree){
     if(subtree ==  nullptr) return 0;
-
-    int l = 0;
-    int r = 0;
-
-    if(subtree->left != nullptr) l += 1 + treeDepth(subtree->left);
-    if(subtree->right != nullptr) r += 1 + treeDepth(subtree->right);
-
-    return l > r ? l : r;
+    int l = (subtree->left == nullptr)? 0 : (1 + treeDepth(subtree->left));
+    int r = (subtree->right == nullptr) ? 0 : (1 + treeDepth(subtree->right));
+    return (l > r) ? l : r;
 }
 
 int main() { 
