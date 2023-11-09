@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 struct Node {
   char info;  
   Node *left, *right, *parent;
