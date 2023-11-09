@@ -12,16 +12,18 @@ struct Node {
   ~Node() { cerr << "- Node("<< info << ") destruido..." << endl; }	
 };
 
-string strGraphViz(Node *root) {  stringstream ss;  /*  IMPLEMENTE AQUI */  return ss.str();  }
+string strGraphViz(Node *root) {
+  stringstream ss;  /*  IMPLEMENTE AQUI */  return ss.str();
+}
 	
-void clean(Node *root) { /* IMPLEMENTE AQUI */ }
+void clean(Node *subtree) { /* IMPLEMENTE AQUI */ }
 
 int main() {
   Node *b    = new Node('B'),       *e = new Node('E'),
        *f    = new Node('F'),       *g = new Node('G');    // Folhas
   Node *c    = new Node('C',e,f),   *d = new Node('D',g);  // Intermediarios
   Node *root = new Node('A',b,c,d);                        // Raiz
-  strGraphViz(root);
+  cout << strGraphViz(root);
   clean(root);
   return 0;
 }
