@@ -20,10 +20,10 @@ void showTree(NodeBT<char> *root) {
 }
 
 int main() {
-  NodeBT<char> *w    = new NodeBT<char>('W');  w->addLeft ( new NodeBT<char>('B') );  w->addRight( new NodeBT<char>('C') );
-  NodeBT<char> *z    = new NodeBT<char>('Z');  z->addLeft ( new NodeBT<char>('A') );  z->addRight( w );
-  NodeBT<char> *y    = new NodeBT<char>('Y');  y->addLeft ( z );                      y->addRight( new NodeBT<char>('D') );
-  NodeBT<char> *root = new NodeBT<char>('X');  root->addLeft ( y );                   root->addRight( new NodeBT<char>('E') );
+  NodeBT<char> *w    = new NodeBT<char>('W');  w->setLeft ( new NodeBT<char>('B') );  w->setRight( new NodeBT<char>('C') );
+  NodeBT<char> *z    = new NodeBT<char>('Z');  z->setLeft ( new NodeBT<char>('A') );  z->setRight( w );
+  NodeBT<char> *y    = new NodeBT<char>('Y');  y->setLeft ( z );                      y->setRight( new NodeBT<char>('D') );
+  NodeBT<char> *root = new NodeBT<char>('X');  root->setLeft ( y );                   root->setRight( new NodeBT<char>('E') );
   cout << "pre-order:   " << (root->preorder()   == "X\nY\nZ\nA\nW\nB\nC\nD\nE\n" ? "OK" : "ERROR") << endl;
   cout << "post-order:  " << (root->postorder()  == "A\nB\nC\nW\nZ\nD\nY\nE\nX\n" ? "OK" : "ERROR") << endl;
   cout << "in-order:    " << (root->inorder()    == "A\nZ\nB\nW\nC\nY\nD\nX\nE\n" ? "OK" : "ERROR") << endl;
