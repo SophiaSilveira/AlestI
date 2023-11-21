@@ -18,7 +18,7 @@ class BST {
 };
 
 template <typename T>
-    BST <T>::BST () {
+BST <T>::BST () {
     root = nullptr ;
 }
 
